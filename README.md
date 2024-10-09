@@ -1,69 +1,42 @@
-# CODTECH-Task2
-def get_grade_input():
-    grades = {}
-    while True:
-        subject = input("Enter the subject or assignment name (or type 'done' to finish): ").strip()
-        if subject.lower() == 'done':
-            break
-        try:
-            grade = float(input(f"Enter the grade for {subject}: "))
-            if 0 <= grade <= 100:
-                grades[subject] = grade
-            else:
-                print("Please enter a grade between 0 and 100.")
-        except ValueError:
-            print("Invalid input. Please enter a numeric value.")
-    return grades
+# CODTECH TASK 2
+Name:Uskemalla Ramya
+Company:CODTECH IT SOLUTIONS 
+ID:CT08DS7966
+Domain:python programming
+Duration : 10 September 2024 to 10 october 2024
+ OVERVIEW OF THE PROJECT 
+ OBJECTIVE 
+ The objective of the Student Grade Tracker Python program is to provide a simple, user-friendly tool for managing and analyzing student grades.
+ Specifically, the program aims to:
 
-def calculate_average(grades):
-    if not grades:
-        return 0
-    return sum(grades.values()) / len(grades)
+Collect and Manage Input: Allow users to enter multiple grades for various assignments or subjects. Validate input to ensure that it consists of numerical grades within a specified range 
 
-def determine_letter_grade(average):
-    if average >= 90:
-        return 'A'
-    elif average >= 80:
-        return 'B'
-    elif average >= 70:
-        return 'C'
-    elif average >= 60:
-        return 'D'
-    else:
-        return 'F'
+Calculate Average: Compute the average grade from the entered values to give an overview of academic performance.
 
-def calculate_gpa(letter_grade):
-    gpa_scale = {
-        'A': 4.0,
-        'B': 3.0,
-        'C': 2.0,
-        'D': 1.0,
-        'F': 0.0
-    }
-    return gpa_scale[letter_grade]
+Determine Letter Grade: Convert the average grade into a letter grade based on a predefined grading scale
+(e.g., A, B, C, D, F).
 
-def display_results(grades, average, letter_grade, gpa):
-    print("\n--- Grade Summary ---")
-    for subject, grade in grades.items():
-        print(f"{subject}: {grade}")
-    print(f"\nAverage Grade: {average:.2f}")
-    print(f"Letter Grade: {letter_grade}")
-    print(f"GPA: {gpa:.2f}")
+Compute GPA:
+Translate the average grade into a Grade Point Average (GPA) on a standard 4.0 scale.
 
-def main():
-    print("Welcome to the Student Grade Tracker!")
-    
-    grades = get_grade_input()
-    
-    if not grades:
-        print("No grades entered. Exiting program.")
-        return
-    
-    average = calculate_average(grades)
-    letter_grade = determine_letter_grade(average)
-    gpa = calculate_gpa(letter_grade)
-    
-    display_results(grades, average, letter_grade, gpa)
+Output: Welcome to the Student Grade Tracker! Enter the subject or assignment name (or type 'done' to finish): Telugu
+Enter the grade for Telugu: 98
+Enter the subject or assignment name (or type 'done' to finish): Hindi
+Enter the grade for Hindi: 78
+Enter the subject or assignment name (or type 'done' to finish): English
+Enter the grade for English: 83
+Enter the subject or assignment name (or type 'done' to finish): Maths 
+Enter the grade for Maths: 56
+Enter the subject or assignment name (or type 'done' to finish): Science
+Enter the grade for Science : 64
+Enter the subject or assignment name (or type 'done' to finish): Social
+Enter the grade for Social: 96
+Enter the subject or assignment name (or type 'done' to finish): done
 
-if _name_ == "_main_":
-    main()
+--- Grade Summary --- 
+Telugu: 98.0
+Hindi: 78.0
+English: 86.0
+Maths: 56.0
+Science: 64.0
+Social: 96.0
